@@ -1,0 +1,43 @@
+﻿@model WebPortal.Models.MaterijalModel
+@{
+    //ViewBag.Title = "UploadMaterijal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Postavljanje materijala</h2>
+
+<style>
+    .file {
+        visibility: hidden;
+        position: absolute;
+    }
+</style>
+
+@using (Html.BeginForm("UploadMaterijal", "UploadMaterijal", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+
+    @Html.TextBox("file", "", new { type = "file" }) <br />
+
+    <input type="submit" value="Postavi materijal" />
+        @ViewBag.Message
+        <br />
+
+
+}
+<br />
+@Html.ActionLink("Vidi sve materijale-->", "MaterijaliPrikaz", "UploadMaterijal")
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".browse").on('click', function () {
+            var file = $(this).parent().parent().parent().find('.file');
+            file.trigger('click');
+        });
+        $(".file").on('change', function () {
+            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
+    });
+
+</script>

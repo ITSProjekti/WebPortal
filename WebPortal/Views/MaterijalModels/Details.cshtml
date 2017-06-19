@@ -1,0 +1,51 @@
+﻿@model WebPortal.Models.MaterijalModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MaterijalModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.materijalFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materijalFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materijalUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materijalUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materijalTip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materijalTip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materijalNaziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materijalNaziv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.materijalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

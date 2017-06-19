@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebPortal.Models.MaterijalModel>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.materijalUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materijalTip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materijalNaziv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+            <td>
+               
+            </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materijalUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materijalTip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materijalNaziv)
+        </td>
+        
+    </tr>
+}
+
+</table>

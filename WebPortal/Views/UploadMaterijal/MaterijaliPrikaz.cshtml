@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebPortal.Models.MaterijalModel>
+@{
+    ViewBag.Title = "Materijali Prikaz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Materijali:</h2>
+
+
+@foreach (var materijal in Model)
+            {
+    <div>
+        <h3>Naziv materijala: @materijal.materijalNaziv</h3>
+        @if (materijal.materijalFile != null)
+        {
+            <a href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = materijal.materijalId })">Preuzmi ovaj materijal</a><span>-----------</span>
+
+                @Html.ActionLink("Obrisi ovaj materijal", "Delete", new { id = materijal.materijalId })
+
+        }
+    </div>
+}
