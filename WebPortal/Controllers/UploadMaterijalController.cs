@@ -12,17 +12,29 @@ using System.Data.Entity;
 
 namespace WebPortal.Content.uploads
 {
+    /// <summary>
+    /// Kontroler za upravljanje ucenicima.
+    /// </summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     public class UploadMaterijalController : Controller
     {
-
-
+        /// <summary>
+        /// Deklaracija polja context.
+        /// </summary>
         private IMaterijalContext context;
 
+        /// <summary>
+        /// Inicijalizuje instancu klase <see cref="UploadMaterijalController"/>.
+        /// </summary>
         public UploadMaterijalController()
         {
             context = new MaterijalContext();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadMaterijalController"/> class.
+        /// </summary>
+        /// <param name="Context">The context.</param>
         public UploadMaterijalController(IMaterijalContext Context)
         {
             context = Context;
@@ -30,6 +42,11 @@ namespace WebPortal.Content.uploads
 
 
 
+        /// <summary>
+        /// Funkcija koja sluzi za prikaz materijala.
+        /// </summary>
+        /// <param name="Broj">Broj.</param>
+        /// <returns>View</returns>
         [HttpGet]
         public ActionResult MaterijaliPrikaz(int number = 0)
         {
@@ -49,7 +66,6 @@ namespace WebPortal.Content.uploads
 
         }
 
-
         [HttpGet]
         public ActionResult UploadMaterijal()
         {
@@ -58,6 +74,12 @@ namespace WebPortal.Content.uploads
             return View();
         }
 
+        /// <summary>
+        /// Funkcija koja sluzi za upload materijala.
+        /// </summary>
+        /// <param name="materijal">Materijal.</param>
+        /// <param name="file">Fajl.</param>
+        /// <returns>View</returns>
         [HttpPost]
         public ActionResult UploadMaterijal(MaterijalModel materijal, HttpPostedFileBase file)
         {
@@ -90,6 +112,11 @@ namespace WebPortal.Content.uploads
             }
         }
 
+        /// <summary>
+        /// Funkcija koja sluzi za download materijala.
+        /// </summary>
+        /// <param name="id">Identifikator.</param>
+        /// <returns>File</returns>
         public FileContentResult DownloadMaterijal(int id)
         {
             MaterijalModel materijal = context.pronadjiMaterijalPoId(id);
@@ -103,6 +130,11 @@ namespace WebPortal.Content.uploads
             }
         }
 
+        /// <summary>
+        /// Funkcija koja sluzi za brisanje materijala.
+        /// </summary>
+        /// <param name="id">Identifikator.</param>
+        /// <returns>View</returns>
         public ActionResult Delete(int id)
         {
             MaterijalModel materijal = context.pronadjiMaterijalPoId(id);
@@ -113,6 +145,11 @@ namespace WebPortal.Content.uploads
             return View("Delete", materijal);
         }
 
+        /// <summary>
+        /// Funkcija koja sluzi za brisanje materijala nakon sto je potvrdjeno.
+        /// </summary>
+        /// <param name="id">Identifikator</param>
+        /// <returns>RedirectToAction</returns>
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
@@ -122,9 +159,5 @@ namespace WebPortal.Content.uploads
             context.SaveChanges();
             return RedirectToAction("MaterijaliPrikaz");
         }
-
-
-
-
     }
 }

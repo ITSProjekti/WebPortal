@@ -10,16 +10,37 @@ using System.Web.Mvc;
 
 namespace WebPortal.Models
 {
+    /// <summary>
+    /// Ovo je klasa Ucenik
+    /// </summary>
     public class MaterijalModel
     {
 
+        /// <summary>
+        /// Deklaracija svojstva materijalId.
+        /// </summary>
+        /// <value>
+        /// materijalId identifikator.Int
+        /// </value>
         [Key]
         public int materijalId { get; set; }
 
+        /// <summary>
+        /// Deklaracija svojstva materijalFile.
+        /// </summary>
+        /// <value>
+        /// materijal file.Byte[]
+        /// </value>
         [DisplayName("Materijal")]
         [MaxLength]
         public byte[] materijalFile { get; set; }
 
+        /// <summary>
+        /// Deklaracija svojstva MIME tipa fajla.
+        /// </summary>
+        /// <value>
+        /// MIME tip fajla.String
+        /// </value>
         [HiddenInput(DisplayValue = false)]
         public string fileMimeType { get; set; }
 
@@ -35,8 +56,20 @@ namespace WebPortal.Models
         //public string UserName { get; set; }
 
 
+        /// <summary>
+        /// Deklaracija svojstva materijalEkstenzija.
+        /// </summary>
+        /// <value>
+        /// materijal ekstenzija.String
+        /// </value>
         public string materijalEkstenzija { get; set; }
 
+        /// <summary>
+        /// Deklaracija svojstva materijalNaziv.
+        /// </summary>
+        /// <value>
+        /// materijalNaziv.String
+        /// </value>
         public string materijalNaziv { get; set; }
 
     }

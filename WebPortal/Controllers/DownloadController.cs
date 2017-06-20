@@ -29,7 +29,11 @@ namespace WebPortal.Controllers
             return View();
         }
 
-         public ActionResult Downloads()
+        /// <summary>
+        /// Funkcija koja sluzi za download proces.
+        /// </summary>
+        /// <returns>View</returns>
+        public ActionResult Downloads()
         {
             var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Content/uploads/"));
             System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
@@ -43,6 +47,11 @@ namespace WebPortal.Controllers
             return View(items);
         }
 
+        /// <summary>
+        /// Funkcija koja sluzi za preuzimanje odredjene slike.
+        /// </summary>
+        /// <param name="ImageName">Ime slike.</param>
+        /// <returns>File</returns>
         public FileResult Download(string ImageName)
         {
             return File( "~/Content/uploads/" + ImageName, System.Net.Mime.MediaTypeNames.Application.Octet);
