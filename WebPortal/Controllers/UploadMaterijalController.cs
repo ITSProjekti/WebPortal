@@ -13,7 +13,7 @@ using System.Data.Entity;
 namespace WebPortal.Content.uploads
 {
     /// <summary>
-    /// Kontroler za upravljanje ucenicima.
+    /// Kontroler za upravljanje materijalima.
     /// </summary>
     /// <seealso cref="System.Web.Mvc.Controller" />
     public class UploadMaterijalController : Controller
@@ -39,8 +39,6 @@ namespace WebPortal.Content.uploads
         {
             context = Context;
         }
-
-
 
         /// <summary>
         /// Funkcija koja sluzi za prikaz materijala.
