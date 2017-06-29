@@ -4,15 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Web Portal</title>
-    @*@Styles.Render("~/Content/css")*@
+
     @Scripts.Render("~/bundles/modernizr")
-    @*CDN za simplebar*@
-    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
-    @Scripts.Render("~/bundles/uploadNaziv.js")
     @Styles.Render("~/Content/css/stil.css")
     @Styles.Render("~/Content/css/simplebar.css")
-
-
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>@*CDN za simplebar*@
 </head>
 <body>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -35,8 +31,6 @@
                 </div>
             </div>
         </div>*@
-
-
 
     <div data-simplebar id="LeftBar">
         <div id="Crveni">
@@ -148,8 +142,7 @@
     </div>
 
 
-    @RenderBody()
-
+    @RenderBody()  @*Sluzi za prikaz odgovarajuceg viewa koji koristi ovaj layout.*@
 
     <hr />
     <footer>

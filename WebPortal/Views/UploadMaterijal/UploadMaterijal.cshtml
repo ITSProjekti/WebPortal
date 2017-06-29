@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/js")  @*Sluzi za postavljanje imena fajla kada isti bude izabran.*@
+
 <style>
     .file {
         visibility: hidden;
@@ -38,7 +41,7 @@
 <br />
 
 @Html.ActionLink("Vidi sve materijale-->", "MaterijaliPrikaz", "UploadMaterijal")
-@*<script src="~/Scripts/jquery-1.10.2.js"></script>  nema potrebe jer ga ima u layoutu*@
+
 <script>
     $(document).ready(function () {
         $(".browse").on('click', function () {
