@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Postavljanje materijala</h2>
-
 <style>
     .file {
         visibility: hidden;
@@ -13,22 +11,34 @@
     }
 </style>
 
-@using (Html.BeginForm("UploadMaterijal", "UploadMaterijal", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
+
+<div id="sredina">
+    @using (Html.BeginForm("UploadMaterijal", "UploadMaterijal", FormMethod.Post, new { enctype = "multipart/form-data", id ="postavkaMat" }))
+    {
+        //dragan kuzman
+        @Html.TextBox("file", "", new { type = "file" }) <br />
 
 
+        <input type="file" name="file" id="file" class="inputfile" />
 
-    @Html.TextBox("file", "", new { type = "file" }) <br />
+        <label for="file"><img src="~/Content/img/upload2.png" alt="Izaberite Dokument"> <span id="filename">Izaberite dokument...</span></label>
 
-    <input type="submit" value="Postavi materijal" />
+        <input id="materijalNaslov" type="text" placeholder="naslov">
+
+        <textarea id="materijalOpis" placeholder="Describe yourself here..."></textarea>
+
+
+        //dragan kuzman
+        <input type="submit" id="postavi" value="Postavi materijal" />
         @ViewBag.Message
         <br />
+    }
+</div>
 
-
-}
 <br />
+
 @Html.ActionLink("Vidi sve materijale-->", "MaterijaliPrikaz", "UploadMaterijal")
-<script src="~/Scripts/jquery-1.10.2.js"></script>
+@*<script src="~/Scripts/jquery-1.10.2.js"></script>  nema potrebe jer ga ima u layoutu*@
 <script>
     $(document).ready(function () {
         $(".browse").on('click', function () {
@@ -39,5 +49,4 @@
             $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
         });
     });
-
 </script>

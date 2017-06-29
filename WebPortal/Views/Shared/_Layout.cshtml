@@ -4,12 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Web Portal</title>
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
+    @*CDN za simplebar*@
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+    @Scripts.Render("~/bundles/uploadNaziv.js")
+    @Styles.Render("~/Content/css/stil.css")
+    @Styles.Render("~/Content/css/simplebar.css")
+
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,22 +29,135 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Postavljanje materijala", "UploadMaterijal", "UploadMaterijal")</li>
                     <li>@Html.ActionLink("Preuzimanje materijala", "MaterijaliPrikaz", "UploadMaterijal")</li>
-                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                </ul>
-                @Html.Partial("_LoginPartial")
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
+        </div>*@
+
+
+
+    <div data-simplebar id="LeftBar">
+        <div id="Crveni">
+            <img src="~/Content/img/prof-slika.png" alt="profilna slika" />
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Web Portal</p>
-        </footer>
+        <!-- Reseno -->
+        <p id="Ime"> Jovana Nikolic</p>
+        <p id="uloga">
+            administrator
+        </p>
+        <ul class="ListaNav" id="aktivnaSekcija">
+            <li class="naslov">
+                <div id="Cikica" class="slikaOdNaslova">
+                    <img src="~/Content/img/cikica.png" alt="slika1" />
+                </div>
+                <p>Korisnici</p>
+            </li>
+            <li id="aktivan">
+                <div class="slikaLi">
+                    <img src="~/Content/img/plus.png" alt="slika1" />
+                </div>
+                <p>Novi korisnik</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img src="~/Content/img/lupa.png" alt="slika1" />
+                </div>
+                <p>Pretraga korisnika</p>
+            </li>
+        </ul>
+        <ul class="ListaNav">
+            <li class="naslov">
+                <div id="Materijali" class="slikaOdNaslova">
+                    <img src="~/Content/img/mat.png" alt="slika1" />
+                </div>
+                <p>Materijali</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img src="~/Content/img/profesor.png" alt="slika1" />
+                </div>
+                <p>Obuka profesora</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img src="~/Content/img/ucenik.png" alt="slika1" />
+                </div>
+                <p>Nastavni materijal</p>
+            </li>
+        </ul>
+        <ul class="ListaNav">
+            <li class="naslov">
+                <div id="Novine" class="slikaOdNaslova">
+                    <img src="~/Content/img/Novine.png" alt="slika1" />
+                </div>
+                <p id="vestiP">Vesti i obavestenja</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img src="~/Content/img/novine-svetlije.png" alt="slika1" />
+                </div>
+                <p>Pregled vesti</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img id="nova-vest" src="~/Content/img/novavest.png" alt="slika1" />
+                </div>
+                <p>Nova vest</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img id="zvono" src="~/Content/img/zvono.png" alt="slika1" />
+                </div>
+                <p>Pregled obavestenja</p>
+            </li>
+            <li>
+                <div class="slikaLi">
+                    <img src="~/Content/img/zvono-plus.png" alt="slika1" />
+                </div>
+                <p>Novo</p>
+            </li>
+        </ul>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <div id="gornjaNavigacija">
+
+        <a id="nazad" href="#">
+            <img src="~/Content/img/back-strelica.png" alt="nazad">
+        </a>
+
+        <p>
+            Materijali
+        </p>
+
+        <img class="breadcrumbsTrougao" src="~/Content/img/trougao-breadcrumbs.png" alt="/">
+
+        <p>
+            Nastavni materijal
+        </p>
+
+        <img class="breadcrumbsTrougao" src="~/Content/img/trougao-breadcrumbs.png" alt="/">
+
+        <p>
+            Novi materijal
+        </p>
+
+        <img id="gornjeOpcije" src="~/Content/img/tri-tacke.png" alt="opcije">
+
+    </div>
+
+
+    @RenderBody()
+
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Web Portal</p>
+    </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @*@Scripts.Render("~/bundles/bootstrap")*@
+        @RenderSection("scripts", required: false)
 </body>
 </html>
