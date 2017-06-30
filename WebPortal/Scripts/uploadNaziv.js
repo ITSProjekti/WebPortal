@@ -1,5 +1,5 @@
 //document.getElementById('file').onchange = uploadOnChange;
-
+onload = function(){
 document.getElementsByClassName('inputfile')[0].onchange = uploadOnChange;
 
 function uploadOnChange() {
@@ -9,4 +9,6 @@ function uploadOnChange() {
         filename = filename.substring(lastIndex + 1);
     }
     document.getElementById('filename').innerHTML = filename;
+}
+
 }
