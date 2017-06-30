@@ -4,7 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Postavljanje materijala</h2>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/js")  @*Sluzi za postavljanje imena fajla kada isti bude izabran.*@
 
 <style>
     .file {
@@ -13,31 +14,49 @@
     }
 </style>
 
-@using (Html.BeginForm("UploadMaterijal", "UploadMaterijal", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
+
+<div id="sredina">
+    @using (Html.BeginForm("UploadMaterijal", "UploadMaterijal", FormMethod.Post, new { enctype = "multipart/form-data", id = "postavkaMat" }))
+    {
+        @*//dragan kuzman
+            @Html.TextBox("file", "", new { type = "file" }) <br />*@
 
 
+        <input type="file" name="file" id="file" class="inputfile" />
+        <label for="file" id="izaberi-materijal"><img src="~/Content/img/upload2.png" alt="Izaberite Dokument"> <span id="filename">Izaberite dokument...</span></label>
 
-    @Html.TextBox("file", "", new { type = "file" }) <br />
+        <label for="materijalNaslov">Naslov</label>
+        <input id="materijalNaslov" type="text" placeholder="naslov">
 
-    <input type="submit" value="Postavi materijal" />
-        @ViewBag.Message
-        <br />
+        <label for="opis">Opis</label>
+        //<textarea id="materijalOpis" placeholder="Describe yourself here..."></textarea>
+        @Html.TextAreaFor(model => model.materijalOpis);
+
+        <button type="submit" id="postavi">
+            POSTAVI
+        </button>
 
 
-}
+        //dragan kuzman
+        @*<input type="submit" id="postavi" value="Postavi materijal" />
+            @ViewBag.Message
+            <br />*@
+    }
+</div>
+
 <br />
-@Html.ActionLink("Vidi sve materijale-->", "MaterijaliPrikaz", "UploadMaterijal")
-<script src="~/Scripts/jquery-1.10.2.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".browse").on('click', function () {
-            var file = $(this).parent().parent().parent().find('.file');
-            file.trigger('click');
-        });
-        $(".file").on('change', function () {
-            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
-        });
-    });
 
-</script>
+@Html.ActionLink("Vidi sve materijale-->", "MaterijaliPrikaz", "UploadMaterijal")
+
+@*<script>
+        $(document).ready(function () {
+            $(".browse").on('click', function () {
+                var file = $(this).parent().parent().parent().find('.file');
+                file.trigger('click');
+            });
+            $(".file").on('change', function () {
+                $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+            });
+        });
+    </script>*@
+

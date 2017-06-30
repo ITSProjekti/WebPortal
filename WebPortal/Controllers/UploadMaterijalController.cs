@@ -59,7 +59,7 @@ namespace WebPortal.Content.uploads
         }
 
         [HttpPost]
-        public ActionResult UploadMaterijal(MaterijalModel materijal, HttpPostedFileBase file)
+        public ActionResult UploadMaterijal(MaterijalModel materijal, HttpPostedFileBase file,MaterijalModel model)
         {
 
             if (ModelState.IsValid)
@@ -75,6 +75,7 @@ namespace WebPortal.Content.uploads
                     file.InputStream.Read(materijal.materijalFile, 0, file.ContentLength);
                     materijal.materijalNaziv = nazivFajla;
                     materijal.materijalEkstenzija = Path.GetExtension(nazivFajla);
+                    materijal.materijalOpis = model.materijalOpis;
 
                 }
 
@@ -128,3 +129,4 @@ namespace WebPortal.Content.uploads
 
     }
 }
+
