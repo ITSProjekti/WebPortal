@@ -1,4 +1,6 @@
-document.getElementById('file').onchange = uploadOnChange;
+//document.getElementById('file').onchange = uploadOnChange;
+
+document.getElementsByClassName('inputfile')[0].onchange = uploadOnChange;
 
 function uploadOnChange() {
     var filename = this.value;
