@@ -24,7 +24,7 @@ namespace WebPortal.Models
         public string fileMimeType { get; set; }
 
         //[DataType(DataType.MultilineText)]
-        //public string opisMaterijal { get; set; }
+        public string materijalOpis { get; set; }
 
         //[DataType(DataType.DateTime)]
         //[DisplayName("Created Date")]

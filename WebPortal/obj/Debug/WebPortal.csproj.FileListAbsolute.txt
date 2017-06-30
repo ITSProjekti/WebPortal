@@ -442,7 +442,6 @@ C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\bin\Microsoft.Owin.Securit
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.csprojResolveAssemblyReference.cache
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.InitialMigration.resources
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.MaterijalModelMigration.resources
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.PromenaMaterijalModela.resources
@@ -453,6 +452,7 @@ C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrat
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.IskomentarisanOpisMaterijala.resources
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.IzbrisanDBSetIzIdentity.resources
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.revert.resources
+C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.Migrations.dodajOpis.resources
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.csproj.GenerateResource.Cache
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.dll
 C:\Users\Student\Desktop\Projekat WebPortal\WebPortal\obj\Debug\WebPortal.pdb

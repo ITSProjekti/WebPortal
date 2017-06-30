@@ -13,18 +13,18 @@ body{
 }
 
 @font-face{
-  font-family: 'Roboto-Regular';
-  src: url("../fonts/Roboto-Regular.ttf");
+  font-family: 'roboto-regular';
+  src: url("../Fontovi/Roboto-Regular.ttf");
 }
 
 @font-face{
   font-family: 'roboto-medium';
-  src: url("../fonts/Roboto-Medium.ttf");
+  src: url("../Fontovi/Roboto-Medium.ttf");
 }
 
 @font-face{
   font-family: 'roboto-bold';
-  src: url("../fonts/Roboto-Bold.ttf");
+  src: url("../Fontovi/Roboto-Bold.ttf");
 }
 
 body{
@@ -75,7 +75,7 @@ body{
   text-align: center;
   margin-top: 75px;
   font-size: 21px;
-  font-family: 'Roboto-Regular';
+  font-family: 'roboto-regular';
 }
 
 p#uloga{
@@ -444,3 +444,75 @@ a#novi-materijal:hover img{
   margin-bottom:12px;
   display:inline-block;
 }
+
+form#postavkaMat{
+  width: calc(100% - 69px);
+  background-color:#fff;
+  border-radius:3px;
+  display: inline-block;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.26);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.26);
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.26);
+}
+
+input#materijalNaslov{
+  display:block;
+  margin:0 70px;
+  min-width: 253px;
+  height: 58px;
+  background-color: #f8f8f8;
+  font-family: 'roboto-regular';
+  font-size: 18px;
+}
+
+input#materijalNaslov:focus, textarea#materijalOpis:focus{
+  background-color:#fff;
+  border: 2px solid #e45459;
+  border-radius:3px;
+}
+
+textarea#materijalOpis{
+  dispplay:block;
+  margin:0 70px 70px 70px;
+  min-width: 253px;
+  min-height:58px;
+  background-color: #f8f8f8;
+  font-family: 'roboto-regular';
+  font-size: 15px;
+}
+
+form#postavkaMat input#file + label{
+  margin:70px 0 0 70px;
+}
+
+form#postavkaMat label:not(#izaberi-materijal){
+  display: block;
+  margin: 30px 0 10px 70px;
+  font-family: 'roboto-bold';
+  color:#545555;
+}
+
+button#postavi {
+  padding: 11px;
+  color: #fff;
+  background-color: #e45459;
+  border-radius: 5px;
+  border: 1px solid #e45459;
+  font-size: 15px;
+  font-family: 'roboto-bold';
+/*   float: left; */
+  margin: 70px auto 50px auto;
+  display:block;
+}
+
+button#postavi:hover{
+  background-color:#e21b22;
+  cursor:pointer;
+}
+
+/* #inputWrapper{
+  display:block;
+  margin:0 auto;
+  width: 800px;
+}
+ */
