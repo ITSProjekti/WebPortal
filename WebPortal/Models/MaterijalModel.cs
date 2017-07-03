@@ -39,5 +39,31 @@ namespace WebPortal.Models
 
         public string materijalNaziv { get; set; }
 
+        public string ImgPath { get {
+
+                if (this.materijalEkstenzija == ".pdf")
+                    return "~/Content/img/PDFicon.png";
+                else if (this.materijalEkstenzija == ".rar")
+                    return "~/Content/img/RARicon.png";
+                else if (this.materijalEkstenzija == ".txt")
+                    return "~/Content/img/TXTicont.png";
+                else if (this.materijalEkstenzija == ".jpg")
+                    return "~/Content/img/JPGicon.png";
+                else if (this.materijalEkstenzija == ".gif")
+                    return "~/Content/img/GIF2icon.png";
+                else if (this.materijalEkstenzija == ".png")
+                    return "~/Content/img/PNGicon.png";
+                else if (this.materijalEkstenzija == ".zip")
+                    return "~/Content/img/ZIPicon.png";
+                else if (this.materijalEkstenzija == ".rtf")
+                    return "~/Content/img/RTFicon.png";
+                else if (this.materijalEkstenzija == ".mp4")
+                    return "~/Content/img/MP4icon.png";
+
+                else return "Err";
+              
+
+            } }
+
     }
 }
