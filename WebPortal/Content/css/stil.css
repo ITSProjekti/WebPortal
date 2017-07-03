@@ -14,17 +14,17 @@ body{
 
 @font-face{
   font-family: 'roboto-regular';
-  src: url("../Fontovi/Roboto-Regular.ttf");
+  src: url("../fonts/Roboto-Regular.ttf");
 }
 
 @font-face{
   font-family: 'roboto-medium';
-  src: url("../Fontovi/Roboto-Medium.ttf");
+  src: url("../fonts/Roboto-Medium.ttf");
 }
 
 @font-face{
   font-family: 'roboto-bold';
-  src: url("../Fontovi/Roboto-Bold.ttf");
+  src: url("../fonts/Roboto-Bold.ttf");
 }
 
 body{
@@ -516,3 +516,4 @@ button#postavi:hover{
   width: 800px;
 }
  */
+

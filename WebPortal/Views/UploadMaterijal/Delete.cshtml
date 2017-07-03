@@ -6,25 +6,29 @@
 
 
 
-@using (Html.BeginForm("Delete", "UploadMaterijal", FormMethod.Post))
-{
-    <br />
-    <br />
-    <br />
-
-    <p>Da li ste sigurni da zelite da obrisete ovaj materijal?</p>
-    <div>
-        <a href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = Model.materijalId })">@Model.materijalNaziv</a>
-    </div>
-
-    <br />
-
-
-    <p>
-        <input type="submit" value="Delete" />
+<div id="sredina">
+    @using (Html.BeginForm("Delete", "UploadMaterijal", FormMethod.Post))
+    {
+        <br />
         <br />
         <br />
 
-        @Html.ActionLink("<-Nazad na listu", "MaterijaliPrikaz")
-    </p>
-}
+        <p>Da li ste sigurni da zelite da obrisete ovaj materijal?</p>
+        <div>
+            <a href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = Model.materijalId })">@Model.materijalNaziv</a>
+        </div>
+
+        <br />
+
+
+        <p>
+            <input type="submit" value="Delete" />
+            <br />
+            <br />
+
+            @Html.ActionLink("<-Nazad na listu", "MaterijaliPrikaz")
+        </p>
+    }
+
+
+</div>

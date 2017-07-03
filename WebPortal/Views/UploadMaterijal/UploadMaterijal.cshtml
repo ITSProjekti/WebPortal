@@ -30,7 +30,7 @@
 
         <label for="opis">Opis</label>
         //<textarea id="materijalOpis" placeholder="Describe yourself here..."></textarea>
-        @Html.TextAreaFor(model => model.materijalOpis);
+        @Html.TextAreaFor(model => model.materijalOpis, new { placeholder = "Your Placeholder Text" });
 
         <button type="submit" id="postavi">
             POSTAVI
