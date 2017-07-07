@@ -46,7 +46,7 @@ namespace WebPortal.Models
                 else if (this.materijalEkstenzija == ".rar")
                     return "~/Content/img/RARicon.png";
                 else if (this.materijalEkstenzija == ".txt")
-                    return "~/Content/img/TXTicont.png";
+                    return "~/Content/img/TXTicon.png";
                 else if (this.materijalEkstenzija == ".jpg")
                     return "~/Content/img/JPGicon.png";
                 else if (this.materijalEkstenzija == ".gif")

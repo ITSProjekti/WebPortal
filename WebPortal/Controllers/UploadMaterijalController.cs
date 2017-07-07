@@ -46,7 +46,6 @@ namespace WebPortal.Content.uploads
             }
 
             return View("MaterijaliPrikaz", materijali);
-
         }
 
 
@@ -59,15 +58,13 @@ namespace WebPortal.Content.uploads
         }
 
         [HttpPost]
-        public ActionResult UploadMaterijal(MaterijalModel materijal, HttpPostedFileBase file,MaterijalModel model)
+        public ActionResult UploadMaterijal(MaterijalModel materijal, HttpPostedFileBase file, MaterijalModel model)
         {
 
             if (ModelState.IsValid)
             {
                 if (file != null)
                 {
-
-
                     string nazivFajla = Path.GetFileName(file.FileName);
 
                     materijal.fileMimeType = file.ContentType;
@@ -114,19 +111,17 @@ namespace WebPortal.Content.uploads
             return View("Delete", materijal);
         }
 
-        [HttpPost]
-        [ActionName("Delete")]
+        [HttpGet]
+        //[ActionName("Delete")]
+        //[Route("UploadMaterijal/DeleteConfirmed/{id:int}")]
         public ActionResult DeleteConfirmed(int id)
         {
             MaterijalModel materijal = context.pronadjiMaterijalPoId(id);
             context.Delete<MaterijalModel>(materijal);
             context.SaveChanges();
+            
             return RedirectToAction("MaterijaliPrikaz");
         }
-
-
-
-
     }
 }
 
