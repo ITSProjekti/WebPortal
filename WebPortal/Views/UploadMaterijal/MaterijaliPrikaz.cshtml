@@ -1,84 +1,116 @@
-﻿@model IEnumerable<WebPortal.Models.MaterijalModel>
+﻿+@model IEnumerable<WebPortal.Models.MaterijalModel>
 @{
     ViewBag.Title = "Materijali Prikaz";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @* Ovaj deo treba stilizovati, tj uraditi css *@
 
-@foreach (var materijal in Model)
-{
-    <div id="sredina">
 
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 
-        <a id="novi-materijal" href="@Url.Action("UploadMaterijal", "UploadMaterijal")">
-            <img src="~/Content/img/upload.png" alt="Novi materijal">
-        </a>
+<div id="sredina">
+    <a id="novi-materijal" href="@Url.Action("UploadMaterijal", "UploadMaterijal")">
+        <img src="~/Content/img/upload.png" alt="Novi materijal">
+    </a>
 
-        <div class="kartica">
-
+    @foreach (var materijal in Model)
+    {
+        //using (Html.BeginForm("Delete", "UploadMaterijal", new { id = materijal.materijalId }))
+        //{
+        //}
+        //var myModal = "myModal" + materijal.materijalId;
+        <div class="kartica" id=@materijal.materijalId>
             <div class="karticaTekts">
-
                 <h2>
                     @materijal.materijalNaziv
                 </h2>
-
                 <p class="postavio">
                     Jovana Nikolić / Administrator / 4 Komentara
                 </p>
-
                 <p class="opis">
                     At vero eos et accusamus et iusto odio dignissimos ducimus molestias excepturi sint... raduju svakoj novoj aktivnosti i poseti deci i ljudima kojima je pomoć neophodna.
                 </p>
-
                 <div class="kontrole">
-
-                    <a href="@Url.Action("Delete", "UploadMaterijal", new { id = materijal.materijalId })">
-                        <img src="~/Content/img/obrisi.png" alt="obrisi">
+                    <a class="delete" href="#" data-toggle="modal" data-target="#myModal">
+                        @*<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
+                        @*@Url.Action("Delete", "UploadMaterijal", new { id = materijal.materijalId })*@
+                        <img class="brisi" src="~/Content/img/obrisi.png" alt="obrisi" >
                     </a>
 
                     <a href="#">
                         <img src="~/Content/img/uredi.png" alt="uredi">
                     </a>
-
                     <a href="#">
                         <img src="~/Content/img/komentarisi.png" alt="komentarisi">
                     </a>
-
                     <a class="datumPostavljanja" href="#">28.06.2017.</a>
-
                     <a class="preuzmi" href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = materijal.materijalId })">preuzmi</a>
-
                 </div>
-
             </div>
-
             <div class="karticaFormat">
-
                 <a href="#">
                     <img src="@Url.Content(materijal.ImgPath)" alt="preuzmi-PDF">
-
                 </a>
 
+            </div>
+            @*@Html.HiddenFor(Model => materijal.materijalId, new {@id ="nesto" })*@
+        </div>
+    }
 
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Potvrdi</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
             </div>
 
         </div>
+        <script>
+            $(document).ready(function () {
+                $(".brisi").click(function () {
+                    $delete = $(this);
 
+                    var id = $delete.parent().parent().parent().parent().attr('id');
+                    console.log(id);
+
+                    $('button.btn-default:first').click(function () {
+                        $.ajax({
+                            //url: "/ControllerName/ActionName",
+                            url: '@Url.Action("DeleteConfirmed", "UploadMaterijal")' + "/?id=" + id,
+                            method: 'get',
+                            //data:{id:id},
+                        });
+                        $delete.parent().parent().parent().parent().remove();
+                    });
+                });
+            });
+        </script>
+    </div>
 </div>
 
-}
 
 
+@*<div>
+        <h3>Naziv materijala: @materijal.materijalNaziv</h3>
+        @if (materijal.materijalFile != null)
+        {
+            <a href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = materijal.materijalId })">Preuzmi ovaj materijal</a><span>-----------</span>
 
+                @Html.ActionLink("Obrisi ovaj materijal", "Delete", new { id = materijal.materijalId })
 
-        @*<div>
-                <h3>Naziv materijala: @materijal.materijalNaziv</h3>
-                @if (materijal.materijalFile != null)
-                {
-                    <a href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = materijal.materijalId })">Preuzmi ovaj materijal</a><span>-----------</span>
-
-                        @Html.ActionLink("Obrisi ovaj materijal", "Delete", new { id = materijal.materijalId })
-
-                }
-            </div>*@
+        }
+</div>*@

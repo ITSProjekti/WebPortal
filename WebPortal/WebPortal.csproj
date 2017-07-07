@@ -282,7 +282,6 @@
     <Content Include="Content\css\stil.css" />
     <Content Include="Content\img\back-strelica.png" />
     <Content Include="Content\img\cikica.png" />
-    <Content Include="Content\img\GIF2icon.png" />
     <Content Include="Content\img\GIFicon.png" />
     <Content Include="Content\img\JPGicon.png" />
     <Content Include="Content\img\komentarisi.png" />
@@ -303,7 +302,7 @@
     <Content Include="Content\img\RTFicon.png" />
     <Content Include="Content\img\tri-tacke.png" />
     <Content Include="Content\img\trougao-breadcrumbs.png" />
-    <Content Include="Content\img\TXTicont.png" />
+    <Content Include="Content\img\TXTicon.png" />
     <Content Include="Content\img\ucenik.png" />
     <Content Include="Content\img\upload.png" />
     <Content Include="Content\img\upload2.png" />

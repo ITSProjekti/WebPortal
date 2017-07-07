@@ -6,7 +6,11 @@
     <title>@ViewBag.Title - Web Portal</title>
 
     @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/css/stil.css")
+
+
+
+    @*@Styles.Render("~/Content/css/stil.css")*@
+    @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/css/simplebar.css")
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>@*CDN za simplebar*@
 </head>
@@ -75,10 +79,12 @@
                 <p>Obuka profesora</p>
             </li>
             <li>
-                <div class="slikaLi">
-                    <img src="~/Content/img/ucenik.png" alt="slika1" />
-                </div>
-                <p>Nastavni materijal</p>
+                <a href="@Url.Action("MaterijaliPrikaz", "UploadMaterijal")">
+                    <div class="slikaLi">
+                        <img src="~/Content/img/ucenik.png" alt="slika1" />
+                    </div>
+                    <p>Nastavni materijal</p>
+                </a>
             </li>
         </ul>
         <ul class="ListaNav">
@@ -149,8 +155,8 @@
         <p>&copy; @DateTime.Now.Year - Web Portal</p>
     </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @*@Scripts.Render("~/bundles/bootstrap")*@
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
