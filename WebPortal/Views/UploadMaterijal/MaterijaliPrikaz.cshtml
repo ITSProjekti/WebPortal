@@ -3,8 +3,6 @@
     ViewBag.Title = "Materijali Prikaz";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@* Ovaj deo treba stilizovati, tj uraditi css *@
-
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
@@ -101,16 +99,3 @@
         </script>
     </div>
 </div>
-
-
-
-@*<div>
-        <h3>Naziv materijala: @materijal.materijalNaziv</h3>
-        @if (materijal.materijalFile != null)
-        {
-            <a href="@Url.Action("DownloadMaterijal", "UploadMaterijal", new { id = materijal.materijalId })">Preuzmi ovaj materijal</a><span>-----------</span>
-
-                @Html.ActionLink("Obrisi ovaj materijal", "Delete", new { id = materijal.materijalId })
-
-        }
-</div>*@

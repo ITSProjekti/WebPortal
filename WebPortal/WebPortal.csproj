@@ -215,58 +215,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705241301067_InitialMigration.cs" />
-    <Compile Include="Migrations\201705241301067_InitialMigration.Designer.cs">
-      <DependentUpon>201705241301067_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\ApplicationDbContext\201707071201372_InitialMigration.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201707071201372_InitialMigration.Designer.cs">
+      <DependentUpon>201707071201372_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705241341293_MaterijalModelMigration.cs" />
-    <Compile Include="Migrations\201705241341293_MaterijalModelMigration.Designer.cs">
-      <DependentUpon>201705241341293_MaterijalModelMigration.cs</DependentUpon>
+    <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
+    <Compile Include="Migrations\MaterijalContext\201707071203213_InitialMigrationMaterijal.cs" />
+    <Compile Include="Migrations\MaterijalContext\201707071203213_InitialMigrationMaterijal.Designer.cs">
+      <DependentUpon>201707071203213_InitialMigrationMaterijal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705291142592_PromenaMaterijalModela.cs" />
-    <Compile Include="Migrations\201705291142592_PromenaMaterijalModela.Designer.cs">
-      <DependentUpon>201705291142592_PromenaMaterijalModela.cs</DependentUpon>
+    <Compile Include="Migrations\MaterijalContext\201707071217002_DodajPredmet.cs" />
+    <Compile Include="Migrations\MaterijalContext\201707071217002_DodajPredmet.Designer.cs">
+      <DependentUpon>201707071217002_DodajPredmet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705291153039_PromenaMaterijalModelaPart2.cs" />
-    <Compile Include="Migrations\201705291153039_PromenaMaterijalModelaPart2.Designer.cs">
-      <DependentUpon>201705291153039_PromenaMaterijalModelaPart2.cs</DependentUpon>
+    <Compile Include="Migrations\MaterijalContext\201707071317327_DodajMaterijalPoPredmetu.cs" />
+    <Compile Include="Migrations\MaterijalContext\201707071317327_DodajMaterijalPoPredmetu.Designer.cs">
+      <DependentUpon>201707071317327_DodajMaterijalPoPredmetu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705291211565_MaterijalPromenaPart3.cs" />
-    <Compile Include="Migrations\201705291211565_MaterijalPromenaPart3.Designer.cs">
-      <DependentUpon>201705291211565_MaterijalPromenaPart3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706020835092_VracanjeNaPET.cs" />
-    <Compile Include="Migrations\201706020835092_VracanjeNaPET.Designer.cs">
-      <DependentUpon>201706020835092_VracanjeNaPET.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706061100197_promenaMaterijalModel.cs" />
-    <Compile Include="Migrations\201706061100197_promenaMaterijalModel.Designer.cs">
-      <DependentUpon>201706061100197_promenaMaterijalModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706061231329_IskomentarisanOpisMaterijala.cs" />
-    <Compile Include="Migrations\201706061231329_IskomentarisanOpisMaterijala.Designer.cs">
-      <DependentUpon>201706061231329_IskomentarisanOpisMaterijala.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706061243494_IzbrisanDBSetIzIdentity.cs" />
-    <Compile Include="Migrations\201706061243494_IzbrisanDBSetIzIdentity.Designer.cs">
-      <DependentUpon>201706061243494_IzbrisanDBSetIzIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706061253471_revert.cs" />
-    <Compile Include="Migrations\201706061253471_revert.Designer.cs">
-      <DependentUpon>201706061253471_revert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706301237533_dodajOpis.cs" />
-    <Compile Include="Migrations\201706301237533_dodajOpis.Designer.cs">
-      <DependentUpon>201706301237533_dodajOpis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\MaterijalContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MaterijalContext.cs" />
     <Compile Include="Models\MaterijalDynamicNodeProvider.cs" />
     <Compile Include="Models\MaterijalModel.cs" />
+    <Compile Include="Models\MaterijalPoPredmetu.cs" />
     <Compile Include="Models\MaterijalSharingInitializer.cs" />
+    <Compile Include="Models\PredmetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\IMaterijalContext.cs" />
@@ -416,38 +391,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705241301067_InitialMigration.resx">
-      <DependentUpon>201705241301067_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201707071201372_InitialMigration.resx">
+      <DependentUpon>201707071201372_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705241341293_MaterijalModelMigration.resx">
-      <DependentUpon>201705241341293_MaterijalModelMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\MaterijalContext\201707071203213_InitialMigrationMaterijal.resx">
+      <DependentUpon>201707071203213_InitialMigrationMaterijal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705291142592_PromenaMaterijalModela.resx">
-      <DependentUpon>201705291142592_PromenaMaterijalModela.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\MaterijalContext\201707071217002_DodajPredmet.resx">
+      <DependentUpon>201707071217002_DodajPredmet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705291153039_PromenaMaterijalModelaPart2.resx">
-      <DependentUpon>201705291153039_PromenaMaterijalModelaPart2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705291211565_MaterijalPromenaPart3.resx">
-      <DependentUpon>201705291211565_MaterijalPromenaPart3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706020835092_VracanjeNaPET.resx">
-      <DependentUpon>201706020835092_VracanjeNaPET.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061100197_promenaMaterijalModel.resx">
-      <DependentUpon>201706061100197_promenaMaterijalModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061231329_IskomentarisanOpisMaterijala.resx">
-      <DependentUpon>201706061231329_IskomentarisanOpisMaterijala.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061243494_IzbrisanDBSetIzIdentity.resx">
-      <DependentUpon>201706061243494_IzbrisanDBSetIzIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061253471_revert.resx">
-      <DependentUpon>201706061253471_revert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706301237533_dodajOpis.resx">
-      <DependentUpon>201706301237533_dodajOpis.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\MaterijalContext\201707071317327_DodajMaterijalPoPredmetu.resx">
+      <DependentUpon>201707071317327_DodajMaterijalPoPredmetu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

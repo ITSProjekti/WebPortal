@@ -11,6 +11,9 @@ namespace WebPortal.Models
     public class MaterijalContext : ApplicationDbContext, IMaterijalContext
     {
         public DbSet<MaterijalModel> materijali { get; set; }
+        public DbSet<PredmetModel> predmeti { get; set; }
+
+        public DbSet<MaterijalPoPredmetu> materijaliPoPredmetu { get; set; }
         IQueryable<MaterijalModel> IMaterijalContext.materijali
         {
             get { return materijali; }
