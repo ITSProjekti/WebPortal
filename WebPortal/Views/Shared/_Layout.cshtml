@@ -36,7 +36,14 @@
             </div>
         </div>*@
 
-    <div data-simplebar id="LeftBar">
+    <div id="hamburger-menu-toggle">
+        <div class="bar bar-top"></div>
+        <div class="bar bar-middle"></div>
+        <div class="bar bar-bottom"></div>
+    </div>
+
+    <div data-simplebar class="LeftBar">
+        <div id="CrveniFiksni"></div>
         <div id="Crveni">
             <img src="~/Content/img/prof-slika.png" alt="profilna slika" />
         </div>
@@ -150,10 +157,10 @@
 
     @RenderBody()  @*Sluzi za prikaz odgovarajuceg viewa koji koristi ovaj layout.*@
 
-    <hr />
+    @*<hr />
     <footer>
         <p>&copy; @DateTime.Now.Year - Web Portal</p>
-    </footer>
+    </footer>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

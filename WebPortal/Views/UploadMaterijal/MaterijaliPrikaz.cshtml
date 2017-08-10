@@ -1,4 +1,4 @@
-﻿+@model IEnumerable<WebPortal.Models.MaterijalModel>
+﻿@model IEnumerable<WebPortal.Models.MaterijalModel>
 @{
     ViewBag.Title = "Materijali Prikaz";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,6 +8,7 @@
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/js")
 
 <div id="sredina">
     <a id="novi-materijal" href="@Url.Action("UploadMaterijal", "UploadMaterijal")">
@@ -32,16 +33,26 @@
                     At vero eos et accusamus et iusto odio dignissimos ducimus molestias excepturi sint... raduju svakoj novoj aktivnosti i poseti deci i ljudima kojima je pomoć neophodna.
                 </p>
                 <div class="kontrole">
+
+                    <div class="triTackeKontrole" tabindex="1">
+                        <img src="~/Content/img/tri-tacke.png" alt="jos-opcija">
+                        <div class="dropdown-sadrzaj">
+                            <a href="#">Obriši</a>
+                            <a href="#">Uredi</a>
+                            <a href="#">Komentariši</a>
+                        </div>
+                    </div>
+
                     <a class="delete" href="#" data-toggle="modal" data-target="#myModal">
                         @*<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
                         @*@Url.Action("Delete", "UploadMaterijal", new { id = materijal.materijalId })*@
                         <img class="brisi" src="~/Content/img/obrisi.png" alt="obrisi" >
                     </a>
 
-                    <a href="#">
+                    <a class="uredi" href="#">
                         <img src="~/Content/img/uredi.png" alt="uredi">
                     </a>
-                    <a href="#">
+                    <a class="komentarisi" href="#">
                         <img src="~/Content/img/komentarisi.png" alt="komentarisi">
                     </a>
                     <a class="datumPostavljanja" href="#">28.06.2017.</a>
@@ -102,7 +113,7 @@
     </div>
 </div>
 
-
+@Scripts.Render("~/Scripts/kontroleRespMaterijaliPrikaz.js")
 
 @*<div>
         <h3>Naziv materijala: @materijal.materijalNaziv</h3>
